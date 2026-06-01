@@ -1,21 +1,29 @@
 const { MongoClient } = require("mongodb");
 
-// This tells the file to look for your secret link when it's online
-const uri = process.env.ROBOSKOOL_DB_URL;
-const client = new MongoClient(uri);
-
-// We use a cached connection so it runs lightning fast
+// We keep the cache empty at first
 let cachedClient = null;
 
 async function connectToDatabase() {
   if (cachedClient) return cachedClient;
+
+  // 1. GRAB PASSWORD AT RUNTIME (This fixes your error!)
+  const uri = process.env.ROBOSKOOL_DB_URL;
+
+  // 2. Failsafe just in case Netlify still can't find it
+  if (!uri) {
+    throw new Error(
+      "Wait! The MongoDB password is missing from Netlify Environment Variables.",
+    );
+  }
+
+  // 3. Connect and save to cache
+  const client = new MongoClient(uri);
   await client.connect();
   cachedClient = client;
   return client;
 }
 
 exports.handler = async (event, context) => {
-  // Only allow POST requests (when the form is submitted)
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
@@ -24,11 +32,9 @@ exports.handler = async (event, context) => {
     const data = JSON.parse(event.body);
     const databaseClient = await connectToDatabase();
 
-    // This creates a database called 'roboskool_db' and a folder inside called 'contact_submissions'
     const db = databaseClient.db("roboskool_db");
     const collection = db.collection("contact_submissions");
 
-    // Save the data to the cloud!
     const result = await collection.insertOne({
       ...data,
       submittedAt: new Date().toISOString(),
@@ -37,7 +43,7 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: "Data successfully saved!",
+        message: "Data secured in MongoDB!",
         id: result.insertedId,
       }),
     };
@@ -45,7 +51,7 @@ exports.handler = async (event, context) => {
     console.error("Database Error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Failed to save data." }),
+      body: JSON.stringify({ error: "Failed to save data to the cloud." }),
     };
   }
 };
