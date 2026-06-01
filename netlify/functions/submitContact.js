@@ -7,8 +7,7 @@ async function connectToDatabase() {
   if (cachedClient) return cachedClient;
 
   // 1. GRAB PASSWORD AT RUNTIME (This fixes your error!)
-  const uri =
-    "mongodb+srv://superadmin:Roboskool2026@roboskool.waimvni.mongodb.net/?appName=RoboSkool";
+  const uri = process.env.ROBOSKOOL_DB_URL;
 
   // 2. Failsafe just in case Netlify still can't find it
   if (!uri) {
