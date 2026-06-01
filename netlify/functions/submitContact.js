@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 // This tells the file to look for your secret link when it's online
-const uri = process.env.MONGODB_URI;
+const uri = process.env.ROBOSKOOL_DB_URL;
 const client = new MongoClient(uri);
 
 // We use a cached connection so it runs lightning fast
