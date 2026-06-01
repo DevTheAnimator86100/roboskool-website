@@ -1,0 +1,3 @@
+fqtTZI51C4tuJcyD
+
+mongodb+srv://devgamerz1111_db_user:fqtTZI51C4tuJcyD@roboskool.waimvni.mongodb.net/?appName=RoboSkool
