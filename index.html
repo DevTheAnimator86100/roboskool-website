@@ -8,6 +8,11 @@
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -37,7 +42,7 @@
         <div class="flex justify-between items-center h-20">
           <!-- Brand / Logo Section -->
           <a
-            href="#"
+            href="#home"
             class="flex-shrink-0 flex items-center gap-3 cursor-pointer text-decoration-none"
           >
             <div
@@ -54,7 +59,7 @@
 
           <!-- Desktop Navigation Links (Tailwind handles the display, bypassing Bootstrap bug) -->
           <div class="hidden lg:flex items-center space-x-8">
-            <a href="#" class="nav-link active">Home</a>
+            <a href="#home" class="nav-link active">Home</a>
             <a href="#about" class="nav-link">About Us</a>
             <a href="#services" class="nav-link">Services</a>
             <a href="#courses" class="nav-link">Courses</a>
@@ -65,7 +70,7 @@
           <div class="flex items-center gap-4">
             <!-- Desktop CTA Button -->
             <div class="hidden lg:block">
-              <a href="#enroll" class="premium-btn"> Get a Quote </a>
+              <a href="#contact" class="premium-btn"> Get a Quote </a>
             </div>
 
             <!-- Mobile Hamburger Menu Button -->
@@ -98,13 +103,13 @@
         class="hidden lg:hidden bg-slate-900/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all"
       >
         <div class="px-4 pt-4 pb-6 space-y-3">
-          <a href="#" class="mobile-nav-link text-blue-400">Home</a>
+          <a href="#home" class="mobile-nav-link text-blue-400">Home</a>
           <a href="#about" class="mobile-nav-link">About Us</a>
           <a href="#services" class="mobile-nav-link">Services</a>
           <a href="#courses" class="mobile-nav-link">Courses</a>
           <a href="#contact" class="mobile-nav-link">Contact</a>
           <a
-            href="#enroll"
+            href="#contact"
             class="w-full text-center block mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg text-decoration-none"
             >Get a Quote</a
           >
@@ -118,6 +123,7 @@
     <!-- HERO SECTION BEGINS HERE -->
     <header
       class="hero-section container-fluid pt-10 pb-32 overflow-hidden relative"
+      id="home"
     >
       <!-- Premium Subtle Background Glows (Large radial gradients) -->
       <div
@@ -602,6 +608,59 @@
       </div>
     </section>
 
+    <!-- COMPLETE TECH STACK MARQUEE -->
+    <section class="tech-marquee-section">
+      <p class="marquee-title">POWERING THE NEXT GENERATION OF AI & ROBOTICS</p>
+
+      <div class="marquee-container">
+        <div class="marquee-track">
+          <!-- GROUP 1 -->
+          <div class="marquee-group">
+            <div class="tech-capsule brand-python">
+              <i class="devicon-python-plain"></i> Python
+            </div>
+            <div class="tech-capsule brand-cpp">
+              <i class="devicon-cplusplus-plain"></i> C++
+            </div>
+            <div class="tech-capsule brand-arduino">
+              <i class="devicon-arduino-plain"></i> Arduino
+            </div>
+            <div class="tech-capsule brand-tf">
+              <i class="devicon-tensorflow-original"></i> TensorFlow
+            </div>
+            <div class="tech-capsule brand-pi">
+              <i class="devicon-raspberrypi-plain"></i> Raspberry Pi
+            </div>
+            <div class="tech-capsule brand-linux">
+              <i class="devicon-linux-plain"></i> Embedded Linux
+            </div>
+          </div>
+
+          <!-- GROUP 2 (Exact Duplicate for Seamless Looping) -->
+          <div class="marquee-group">
+            <div class="tech-capsule brand-python">
+              <i class="devicon-python-plain"></i> Python
+            </div>
+            <div class="tech-capsule brand-cpp">
+              <i class="devicon-cplusplus-plain"></i> C++
+            </div>
+            <div class="tech-capsule brand-arduino">
+              <i class="devicon-arduino-plain"></i> Arduino
+            </div>
+            <div class="tech-capsule brand-tf">
+              <i class="devicon-tensorflow-original"></i> TensorFlow
+            </div>
+            <div class="tech-capsule brand-pi">
+              <i class="devicon-raspberrypi-plain"></i> Raspberry Pi
+            </div>
+            <div class="tech-capsule brand-linux">
+              <i class="devicon-linux-plain"></i> Embedded Linux
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- COURSES / CURRICULUM SECTION -->
     <section
       id="courses"
@@ -935,6 +994,104 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+      <div class="testimonials-header">
+        <h2>Voices of <span class="highlight-text">RoboSkool</span></h2>
+        <p>Join the next generation of AI and Robotics engineers.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimony-card ceo-card">
+          <div class="card-glow"></div>
+          <div class="profile-area">
+            <svg
+              class="avatar"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="50" r="50" fill="#1e293b" />
+              <circle cx="50" cy="35" r="15" fill="#738FFF" />
+              <path
+                d="M20 90 Q50 50 80 90"
+                stroke="#738FFF"
+                stroke-width="8"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div class="profile-info">
+              <h3>Your Name</h3>
+              <p class="title">Founder & CEO, RoboSkool</p>
+            </div>
+          </div>
+          <p class="quote">
+            "We are not just teaching syntax; we are teaching machines how to
+            think, move, and adapt. I built RoboSkool to bridge the gap between
+            software and hardware. If you want to build the autonomous systems
+            of tomorrow, you are exactly where you need to be."
+          </p>
+        </div>
+
+        <div class="testimony-card student-card">
+          <div class="profile-area">
+            <svg
+              class="avatar"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="50" r="50" fill="#1e293b" />
+              <circle cx="50" cy="35" r="15" fill="#94a3b8" />
+              <path
+                d="M20 90 Q50 50 80 90"
+                stroke="#94a3b8"
+                stroke-width="8"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div class="profile-info">
+              <h3>Marcus T.</h3>
+              <p class="title">Robotics Engineer</p>
+            </div>
+          </div>
+          <p class="quote">
+            "Before RoboSkool, I only knew basic Python. Within months, I was
+            writing machine learning models that allowed my custom robotic arm
+            to sort objects autonomously. The curriculum is absolutely elite."
+          </p>
+        </div>
+
+        <div class="testimony-card student-card">
+          <div class="profile-area">
+            <svg
+              class="avatar"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="50" r="50" fill="#1e293b" />
+              <circle cx="50" cy="35" r="15" fill="#94a3b8" />
+              <path
+                d="M20 90 Q50 50 80 90"
+                stroke="#94a3b8"
+                stroke-width="8"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            <div class="profile-info">
+              <h3>Elena R.</h3>
+              <p class="title">AI Solutions Architect</p>
+            </div>
+          </div>
+          <p class="quote">
+            "The way this platform breaks down complex neural networks and
+            applies them directly to real-world hardware is brilliant. It
+            completely transformed my understanding of what AI can actually do."
+          </p>
         </div>
       </div>
     </section>
